@@ -1,0 +1,31 @@
+{
+  "name": "react_practice-main",
+  "version": "1.0.0",
+  "description": "react",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Cvam1999/React_Practice.git"
+  },
+  "keywords": [
+    "react"
+  ],
+  "author": "Shivam Gupta",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Cvam1999/React_Practice/issues"
+  },
+  "homepage": "https://github.com/Cvam1999/React_Practice#readme",
+  "devDependencies": {
+    "parcel": "^2.14.4"
+  },
+  "dependencies": {
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
+  },
+  "browserlist": [
+    "last 2 versions"
+  ]
+}
