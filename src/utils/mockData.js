@@ -1,7 +1,3 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import { jsx } from 'react/jsx-runtime';
-
 const resList = [
 	{
 		"@type": "type.googleapis.com/swiggy.presentation.food.v2.Restaurant",
@@ -740,62 +736,4 @@ const resList = [
 	}
 ]
 
-const Header = () => {
-  return (
-    <div className='header'>   
-    <div className='logo-container'>
-      <img className='logo' src='https://marketplace.canva.com/EAFpeiTrl4c/2/0/1600w/canva-abstract-chef-cooking-restaurant-free-logo-a1RYzvS1EFo.jpg' />
-    </div>
-    <div className='nav-items'>
-        <ul>
-            <li>Home</li>
-            <li>About</li>
-            <li>Contact</li>
-            <li>cart</li>
-        </ul>
-    </div>
-    </div>
- 
-  );
-}
-
-const RestaurantCard = (props) =>{
-  const {resData} = props;
-  const {name, avgRating, cuisines, areaName, costForTwo, cloudinaryImageId} = resData?.info;
-    return (
-        <div className='res-card'>
-        <img className='res-logo' alt='res-logo' src={"https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/" +
-          cloudinaryImageId} />
-        <h2>{name}</h2>
-        <p>{avgRating}</p>
-        <p>{cuisines.join(", ")}</p>
-        <p>{areaName}</p>
-        <p>{costForTwo}</p>
-        </div>
-    );
-}
-const Body = () => {
-  return (
-    <div className='body'>
-      <div className='search'>Search</div>
-      <div className='res-container'>
-	  {resList.map((restaurant) => (
-		<RestaurantCard key={restaurant.info.id} resData={restaurant} />
-	  ))}
-      
-      
-    </div>
-    </div>
-  );
-}
-
-const AppLayout = () => {
-  return (
-    <div className='app'>
-      <Header />
-      <Body />
-    </div>
-  );
-}
-const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<AppLayout />);
+export default resList;
