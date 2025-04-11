@@ -11,9 +11,9 @@ const resList = [
 			"cuisines": [
 				"Pizzas"
 			],
-			"avgRating": 4.3,
+			"avgRating": 3.3,
 			"parentId": "721",
-			"avgRatingString": "4.3",
+			"avgRatingString": "3.3",
 			"totalRatingsString": "1.4K+",
 			"sla": {
 				"deliveryTime": 55,
