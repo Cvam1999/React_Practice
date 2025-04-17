@@ -65,21 +65,28 @@
   margin: 5px;
   padding: 5px;
 }
-.login{
-   padding: 5px;
-   margin: 7px;
-   cursor: pointer;
-   background-color: #f0f0f0;
-   border-radius: 5px;
+.login {
+  padding: 5px;
+  margin: 7px;
+  cursor: pointer;
+  background-color: #f0f0f0;
+  border-radius: 5px;
 }
-.filter{
-   display: flex;
+.filter {
+  display: flex;
 }
-.search{
-   margin: 5px;
+.search {
+  margin: 5px;
 }
 a {
-  color: inherit;       /* Inherit the text color from parent */
+  color: inherit; /* Inherit the text color from parent */
   text-decoration: none; /* Remove underline */
 }
 
+.user-card {
+  justify-content: space-between;
+  padding: 5px;
+  margin: 5px;
+  background-color: #f0f0f0;
+  border-radius: 5px;
+}
