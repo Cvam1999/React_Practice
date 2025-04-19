@@ -1,16 +1,21 @@
 import { useState } from "react";
 import { LOGO_URL } from "../utils/constant";
 import { Link } from "react-router-dom";
+import useOnlineStatus from "../utils/useOnlineStatus";
 
 const Header = () => {
   const [btnName, setBtnName] = useState("Login");
+  const onlineStatus = useOnlineStatus();
   return (
-    <div className="header">
+    <div className="flex justify-between p-4 bg-orange-600">
       <div className="logo-container">
-        <img className="logo" src={LOGO_URL} />
+        <img className="w-24" src={LOGO_URL} />
       </div>
-      <div className="nav-items">
-        <ul>
+      <div className="nav-items ">
+        <ul className="flex p-4 m-4 space-x-4">
+          <li>
+            Online status :{onlineStatus ? "✅" : "❌"}
+          </li>
           <li>
             <Link to="/">Home</Link>
           </li>
@@ -22,7 +27,7 @@ const Header = () => {
           </li>
           <li>cart</li>
           <button
-            className="login"
+            className="login hover:bg-orange-800 cursor-pointer"
             onClick={() => {
               btnName === "Login" ? setBtnName("Logout") : setBtnName("Login");
             }}
