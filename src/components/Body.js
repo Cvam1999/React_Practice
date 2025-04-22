@@ -1,4 +1,4 @@
-import RestaurantCard from "./RestaurantCard";
+import RestaurantCard, {withPromotedLabel} from "./RestaurantCard";
 import { useEffect, useState } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
@@ -8,9 +8,13 @@ const Body = () => {
   const [list, setList] = useState([]);
   const [filterList, setFilterList] = useState([]);
   const [searchText, setSearchText] = useState("");
+
+  const PromotedRestaurantCard = withPromotedLabel(RestaurantCard);
+
+  //console.log(list);
+
   useEffect(() => {
     fetchData();
-    console.log("useEffect called");
   },[]);
   const fetchData = async () => {
     const data = await fetch(
@@ -79,7 +83,11 @@ const Body = () => {
       <div className="res-container flex flex-wrap justify-center">
         {filterList.map((restaurant) => (
           <Link to={"/restaurant/" + restaurant?.info?.id} key={restaurant?.info?.id}>
-            <RestaurantCard resData={restaurant} />
+            {restaurant?.info?.isOpen ? (
+              <PromotedRestaurantCard resData={restaurant} />
+            ) : (
+              <RestaurantCard resData={restaurant} />
+            )}
           </Link>
         ))}
       </div>
