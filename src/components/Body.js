@@ -3,6 +3,8 @@ import { useEffect, useState } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
+import UserContext from "../utils/UserContext";
+import { useContext } from "react";
 
 const Body = () => {
   const [list, setList] = useState([]);
@@ -38,6 +40,8 @@ const Body = () => {
       </div>
     );
   }
+  const data = useContext(UserContext);
+  const { loggedInUser, setUserName  } = data;
 
   //conditional rendering
   //if(list.length === 0) return <Shimmer />;
@@ -79,6 +83,18 @@ const Body = () => {
         >
           Top Rated Restaurants
         </button>
+        <div className="my-4">
+          <label>UserName</label>
+        <input
+            type="text"
+            placeholder="Name"
+            className="search-box border border-black rounded-lg p-1 m-1"
+            value={loggedInUser}
+            onChange={(e) => {
+              setUserName(e.target.value);
+            }}
+          />
+        </div>
       </div>
       <div className="res-container flex flex-wrap justify-center">
         {filterList.map((restaurant) => (
