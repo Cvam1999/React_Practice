@@ -3,12 +3,18 @@ import { LOGO_URL } from "../utils/constant";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
 import UserContext from "../utils/UserContext";
+import { useSelector } from "react-redux";
+
 
 const Header = () => {
   const [btnName, setBtnName] = useState("Login");
   const onlineStatus = useOnlineStatus();
   const data = useContext(UserContext);
   const { loggedInUser } = data;
+
+  //subscribing to the store to get the cart items
+  const cartItems = useSelector((store) => store.cart.items);
+  console.log(cartItems);
   return (
     <div className="flex justify-between p-4 bg-orange-600">
       <div className="logo-container">
@@ -28,7 +34,7 @@ const Header = () => {
           <li>
             <Link to="/contact">Contact</Link>
           </li>
-          <li>cart</li>
+          <li className="font-bold text-2xl">🛒(items {cartItems.length})</li>
           <button
             className="login hover:bg-orange-800 cursor-pointer"
             onClick={() => {
