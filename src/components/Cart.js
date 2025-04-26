@@ -19,7 +19,7 @@ const Cart = () => {
           " "
         ) : (
           <button
-            className="p-2 m-2 font-bold bg-black text-white rounded-sm cursor-pointer hover:bg-gray-900"
+            className="p-2 m-2 font-bold bg-black text-white rounded-sm cursor-pointer hover:bg-gray-500"
             onClick={handleClearCart}
           >
             Clear Cart

@@ -21,7 +21,15 @@
   },
   "homepage": "https://github.com/Cvam1999/React_Practice#readme",
   "devDependencies": {
+    "@babel/core": "^7.26.10",
+    "@babel/preset-env": "^7.26.9",
+    "@babel/preset-react": "^7.26.3",
     "@parcel/transformer-react-refresh-wrap": "^2.14.4",
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/react": "^16.3.0",
+    "babel-jest": "^29.7.0",
+    "jest": "^29.7.0",
+    "jest-environment-jsdom": "^29.7.0",
     "parcel": "^2.14.4"
   },
   "dependencies": {
@@ -34,7 +42,7 @@
     "react-router-dom": "^7.5.0",
     "tailwindcss": "^4.1.4"
   },
-  "browserlist": [
+  "browserslist": [
     "last 2 versions"
   ]
 }
