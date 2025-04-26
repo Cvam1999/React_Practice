@@ -5,17 +5,17 @@ import { addItems } from "../utils/cartSlice";
 
 const ItemList = ({ items }) => {
   const dispatch = useDispatch();
-  const handleAddItem = () => {
-    dispatch(addItems("pizza"));
+  const handleAddItem = (item) => {
+    dispatch(addItems(item));
   };
   return (
     <div>
-      {items.map((item) => (
+      {items.map((item ,index) => (
         <div
-          key={item.card.info.id}
+          key={index}
           className=" p-2 m-2 bg-gray-100 shadow-lg rounded-lg border-b-2 justify-between flex"
         >
-          <div>
+          <div className="w-8/12">
             <div className="py-2">
               <span className="font-bold text-lg">
                 {item?.card?.info?.name}
@@ -29,10 +29,10 @@ const ItemList = ({ items }) => {
               </span>
             </div>
             <p className="text-xs">{item?.card?.info?.description}</p>
-          </div>
+            </div>
           <div className="flex flex-col justify-center">
-          <button className="bg-white text-md text-emerald-700 p-2 shadow-lg rounded-md mx-4 my-2"
-          onClick={handleAddItem}
+          <button className="bg-white text-md text-black-700 p-2 shadow-lg rounded-md mx-4 my-2 cursor-pointer  hover:bg-gray-300"
+          onClick={() => handleAddItem(item)}
           >ADD</button>
             
           </div>

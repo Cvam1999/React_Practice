@@ -25,18 +25,20 @@ const Header = () => {
           <li>
             Online status :{onlineStatus ? "✅" : "❌"}
           </li>
-          <li>
+          <li className=" hover:text-gray-100">
             <Link to="/">Home</Link>
           </li>
-          <li>
+          <li className=" hover:text-gray-100">
             <Link to="/about">About</Link>
           </li>
-          <li>
+          <li className=" hover:text-gray-100">
             <Link to="/contact">Contact</Link>
           </li>
-          <li className="font-bold text-2xl">🛒(items {cartItems.length})</li>
+          <li className="font-bold text-2xl hover:text-gray-100">
+            <Link to="/cart">🛒({cartItems.length})</Link>
+          </li>
           <button
-            className="login hover:bg-orange-800 cursor-pointer"
+            className="login cursor-pointer hover:text-gray-100"
             onClick={() => {
               btnName === "Login" ? setBtnName("Logout") : setBtnName("Login");
             }}

@@ -7,7 +7,7 @@ import RestaurantCategory from "./RestaurantCategory";
 
 const RestaurantMenu = () => {
   const { resId } = useParams();
-  const [showIndex, setShowIndex] = useState(null);
+  const [showIndex, setShowIndex] = useState(0);
   const resInfo = userRestaurantMenu(resId);
   if (resInfo === null) return <Shimmer />;
   const menu =
