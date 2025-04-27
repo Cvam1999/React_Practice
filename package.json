@@ -4,6 +4,7 @@
   "description": "react",
   "scripts": {
     "test": "jest",
+    "watch-test": "jest --watch",
     "start": "parcel index.html --port 1234",
     "build": "parcel build index.html"
   },
@@ -40,7 +41,8 @@
     "react-redux": "^9.2.0",
     "react-router": "^7.5.0",
     "react-router-dom": "^7.5.0",
-    "tailwindcss": "^4.1.4"
+    "tailwindcss": "^4.1.4",
+    "util": "^0.12.5"
   },
   "browserslist": [
     "last 2 versions"
